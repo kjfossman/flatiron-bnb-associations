@@ -5,7 +5,8 @@ class Listing < ApplicationRecord
     has_many :reservations
     has_many :reviews, through: :reservations
     
-    def guests
-        @guests = User.all
-    end
+    has_many :guests, through: :reservations
+    # def guests
+    #     @guests = User.all
+    # end
 end
